@@ -1,0 +1,333 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 30px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul li {
+    padding: 0 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #007bff;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+  
+  .content {
+    text-align: center;
+    padding-top: 100px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+  }
+  
+  #map {
+    height: 80vh;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  }
+  
+  .charging-info {
+    padding: 40px 20px;
+    background-color: white;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .container h2 {
+    color: #28a745;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .container h1 {
+    font-size: 2.25em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .container p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 1.3em;
+  }
+  
+  .content-sections {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: left;
+  }
+  
+  .service-box {
+    flex: 1;
+    background-color: #F6F8F9;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .service-box h3 {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .service-box p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .service-box a {
+    color: #0076a8;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .service-box a:hover {
+    text-decoration: underline;
+  }
+  
+  .service-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .content-sections {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .service-box {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .cover-section {
+    width: 100%;
+    height: 500px;
+  }
+  
+  .cover-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form label {
+    width: 100%;
+    margin: 10px 0 5px;
+  }
+  
+  form input, form select, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  form button:hover {
+    background-color: #218838;
+  }
+  
+  .booking-title {
+    text-align: center;
+    color: #28a745;
+    margin-bottom: 20px;
+  }
+  
+
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-section {
+    flex: 1;
+    padding: 20px;
+    min-width: 200px;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+  }
+  
+  .footer-section p, .footer-section ul, .footer-section a {
+    color: #ccc;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-decoration: none;
+  
+  }
+  
+  .footer-section a:hover {
+    color: white;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section .social a {
+    color: #ccc; /* Default icon color */
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .footer-section .social a:hover {
+    color: #fff; /* Icon color on hover */
+    transform: scale(1.2); /* Slightly increase size on hover */
+  }
+  
+  .footer-bottom {
+    background-color: #222;
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #bbb;
+  }
+  
